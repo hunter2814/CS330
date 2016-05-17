@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% import "forms.html" as forms %}
+{% block title %}Track Times{% endblock %}
+{% block content %}
+{{ super() }}
+<form action="/user" method="POST">
+<fieldset>
+<legend>Add A Runner</legend>
+{{ forms.render(user_form) }}
+<p><input type="Submit" value="Save Runner"></p>
+</fieldset>
+</form>
+
+
+<form>
+<fieldset>
+<legend>Save a Time</legend>
+{{ forms.render(gen_form) }}
+<p><input type="Submit" href="/user" value="Create"></p>
+</fieldset>
+</form>
+{% endblock content %}
